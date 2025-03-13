@@ -106,7 +106,7 @@ public class Ejercicios {
             return teclado.next();
         }
         public static void ejecutar(String opcion){
-            String producto="";
+            String producto;
             System.out.println();
             System.out.println("--------------------------");
             System.out.println();
