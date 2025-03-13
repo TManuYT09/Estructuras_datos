@@ -4,6 +4,11 @@ import java.util.Scanner;
 import java.util.Stack;
 
 public class Pilas {
+    public static void main(String[] args) {
+//        ejercicioUno();
+//        ejercicioDos();
+        ejercicioTres();
+    }
     public static void ejercicioUno(){
         Stack<Character> pila = new Stack<>();
 
