@@ -37,7 +37,7 @@ public class AppCine {
     }
     public static void cuantoRecaudado(){
         while (!cola_cine.isEmpty()){
-            cola_cine.remove();
+            cola_cine.poll();
         }
         System.out.println("La recaudación ha sido de "+recaudado+"€");
     }

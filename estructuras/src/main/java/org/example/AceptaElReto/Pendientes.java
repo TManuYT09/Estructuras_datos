@@ -2,7 +2,7 @@ package org.example.AceptaElReto;
 
 import java.util.*;
 
-public class Cubinfinito {
+public class Pendientes {
     static java.util.Scanner in;
     public static boolean casoDePrueba() {
         int numero=in.nextInt();
