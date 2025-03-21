@@ -14,17 +14,21 @@ public class VaModas {
         else {
             String numeros = in.nextLine();
             String[] numero = numeros.split(" ");
-            HashMap<Integer,Integer> moda = new HashMap<>();
+            Integer max=0;
+            String clave="0";
+            HashMap<String,Integer> moda = new HashMap<>();
             for (String num : numero){
-                moda.put(Integer.valueOf(num),moda.getOrDefault(Integer.valueOf(num),0)+1);
-            }
-            Integer numMax=1;
-            for (Integer numb : moda.keySet()){
-                if (moda.get(numb)>moda.get(numMax)){
-                    numMax= moda.get(numb);
+                if (moda.containsKey(num)){
+                    moda.put(num,moda.get(num)+1);
+                }else {
+                    moda.put(num,1);
+                }
+                if (max < moda.get(num)){
+                    max=moda.get(num);
+                    clave=num;
                 }
             }
-            System.out.println(numMax);
+            System.out.println(clave);
             return true;
         }
     }
