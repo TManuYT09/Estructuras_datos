@@ -27,15 +27,23 @@ public class Teclado {
                         }
                         break;
                     case '*':
-                        iterator.next();
+                        if (iterator.hasNext()){
+                            iterator.next();
+                        }
                         break;
                     case '3':
-                        iterator.remove();
+                        if (iterator.hasNext()){
+                            iterator.next();
+                            iterator.remove();
+                        }
                         break;
                     default:
-                        salida.add(entrada.charAt(i));
+                        iterator.add(entrada.charAt(i));
                         break;
                 }
+            }
+            for (Character c : salida){
+                System.out.print(c);
             }
             return true;
         }
