@@ -1,9 +1,10 @@
 package org.example.AceptaElReto;
 
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.ListIterator;
 
-public class Teclado {
+//Iterator
+public class TecladoEstropeado {
     static java.util.Scanner in;
 
     public static boolean casoDePrueba() {
@@ -11,11 +12,11 @@ public class Teclado {
             return false;
         }
         else {
-            String entrada = in.next();
-            ArrayList<Character> salida = new ArrayList<>();
+            String entrada = in.nextLine();
+            LinkedList<Character> salida = new LinkedList<>();
             ListIterator<Character> iterator = salida.listIterator();
-            for (int i = 0; i < entrada.length(); i++) {
-                switch (entrada.charAt(i)){
+            for (char c : entrada.toCharArray()) {
+                switch (c){
                     case '-':
                         while (iterator.hasPrevious()){
                             iterator.previous();
@@ -27,8 +28,8 @@ public class Teclado {
                         }
                         break;
                     case '*':
-                        if (iterator.hasNext()){
-                            iterator.next();
+                        if (iterator.hasPrevious()){
+                            iterator.previous();
                         }
                         break;
                     case '3':
@@ -38,13 +39,15 @@ public class Teclado {
                         }
                         break;
                     default:
-                        iterator.add(entrada.charAt(i));
+                        iterator.add(c);
                         break;
                 }
             }
-            for (Character c : salida){
-                System.out.print(c);
+            String sal="";
+            for (char c : salida){
+                sal+=c;
             }
+            System.out.println(sal);
             return true;
         }
     }

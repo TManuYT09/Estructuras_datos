@@ -2,7 +2,8 @@ package org.example.AceptaElReto;
 
 import java.util.HashMap;
 
-public class VaModas {
+//Map
+public class VaDeModas {
     static java.util.Scanner in;
 
     public static boolean casoDePrueba() {

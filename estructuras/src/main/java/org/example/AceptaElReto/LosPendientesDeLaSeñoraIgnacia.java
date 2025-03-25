@@ -2,7 +2,8 @@ package org.example.AceptaElReto;
 
 import java.util.*;
 
-public class Pendientes {
+//Sets
+public class LosPendientesDeLaSeñoraIgnacia {
     static java.util.Scanner in;
     public static boolean casoDePrueba() {
         int numero=in.nextInt();

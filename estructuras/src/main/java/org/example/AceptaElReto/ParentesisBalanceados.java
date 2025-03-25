@@ -3,7 +3,8 @@ package org.example.AceptaElReto;
 import java.util.Scanner;
 import java.util.Stack;
 
-public class Parentesis {
+//Pilas
+public class ParentesisBalanceados {
         static Scanner in;
 
         public static boolean casoDePrueba() {
