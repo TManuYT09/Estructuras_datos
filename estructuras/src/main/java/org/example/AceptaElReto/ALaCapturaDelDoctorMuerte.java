@@ -3,6 +3,7 @@ package org.example.AceptaElReto;
 import java.util.LinkedList;
 import java.util.List;
 
+//ArrayList/LinkedList
 public class ALaCapturaDelDoctorMuerte {
     static java.util.Scanner in;
 
