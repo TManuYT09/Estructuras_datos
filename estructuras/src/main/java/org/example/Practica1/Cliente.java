@@ -25,24 +25,33 @@ public class Cliente {
         pedido.anyadirAlMap(producto);
     }
 
-    public double importePedido(){
-        return 0.0;
+    public double importePedido(String producto){
+        return Producto.valueOf(producto).getPrecio();
     }
 
     public String getUsuario() {
         return usuario;
     }
 
-    public void setUsuario(String usuario) {
-        this.usuario = usuario;
-    }
 
     public String getContraseña() {
         return contraseña;
     }
 
-    public void setContraseña(String contraseña) {
-        this.contraseña = contraseña;
+
+    public String getDireccion() {
+        return direccion;
+    }
+
+    public boolean getPromociones() {
+        return promociones;
+    }
+
+    public void cambiarPromociones() {
+        if (!promociones){
+            this.promociones = true;
+        }
+
     }
 
     @Override
