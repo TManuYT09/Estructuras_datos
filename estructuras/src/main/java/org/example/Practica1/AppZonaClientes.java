@@ -1,6 +1,5 @@
 package org.example.Practica1;
 
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
@@ -25,8 +24,8 @@ public class AppZonaClientes {
 
         int intentos = 0;
         boolean verificado = false;
-        String nombreUsu="";
-        String contraUsu="";
+        String nombreUsu;
+        String contraUsu;
 
         do {
             System.out.print("Usuario: ");
@@ -35,8 +34,9 @@ public class AppZonaClientes {
             contraUsu = entrada.nextLine();
 
             for (Cliente cli : clientes){
-                if (nombreUsu.equals(cli.getUsuario()) && contraUsu.equals(cli.getContraseña())){
-                    verificado=true;
+                if (nombreUsu.equals(cli.getUsuario()) && contraUsu.equals(cli.getContraseña())) {
+                    verificado = true;
+                    break;
                 }
             }
 
@@ -112,9 +112,9 @@ public class AppZonaClientes {
             }
         }else {
             System.out.println("Productos ordenados por uds:");
-//            for (Map.Entry<Producto,Integer> produc : cliente.pedido.pedido.entrySet()){
-//                System.out.println(produc.getValue()+" "+produc.getKey()+" "+produc.getKey().getPrecio());
-//            }
+            for (Map.Entry<Producto,Integer> produc : cliente.pedido.pedido.entrySet()){
+                System.out.println(produc.getValue()+" "+produc.getKey()+" "+produc.getKey().getPrecio());
+            }
         }
 
         System.out.println("IMPORTE TOTAL: "+cliente.pedido.getImporte_total());
@@ -131,7 +131,7 @@ public class AppZonaClientes {
         System.out.println("\t[X]. Terminar pedido.");
         System.out.println("==========================================");
         System.out.print("\tElige una opción: ");
-        opc=entrada.next();
+        opc=entrada.nextLine();
         System.out.println("==========================================");
         switch (opc.toUpperCase()){
             case "1":
@@ -151,14 +151,17 @@ public class AppZonaClientes {
                 break;
             case "3":
                 String producto = entrada.nextLine();
-                cliente.pedido.eliminarProducto();
+                cliente.pedido.eliminarProducto(producto);
+                menuHacer();
                 break;
             case "X":
-            default:
                 imprimirDespedida();
                 break;
+            default:
+                System.out.println("ERROR. Opcion no contemplada, volver a pedir");
+                menuHacer();
+                break;
         }
-
     }
 
     public static void imprimirDespedida(){

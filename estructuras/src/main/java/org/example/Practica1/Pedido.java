@@ -31,8 +31,16 @@ public class Pedido {
         importe_total=importe_total+ producto.getPrecio();
     }
 
-    public void eliminarProducto(){
-
+    public void eliminarProducto(String producto){
+        for (Producto produ : Producto.values()){
+            if (produ.toString().equals(producto)){
+                if (pedido.get(produ)>1){
+                    pedido.put(produ,pedido.get(produ)-1);
+                }else {
+                    pedido.remove(produ);
+                }
+            }
+        }
     }
 
     public double getImporte_total() {
