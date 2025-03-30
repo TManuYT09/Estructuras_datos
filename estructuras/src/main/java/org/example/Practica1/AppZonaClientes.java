@@ -3,6 +3,7 @@ package org.example.Practica1;
 import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
+import java.util.SortedMap;
 
 public class AppZonaClientes {
     static Scanner entrada = new Scanner(System.in);
@@ -110,9 +111,9 @@ public class AppZonaClientes {
             for (Map.Entry<Producto,Integer> produc : cliente.pedido.pedido.entrySet()){
                 System.out.println(produc.getValue()+" "+produc.getKey()+" "+produc.getKey().getPrecio());
             }
-        }else {
+        }else if (modo==0){
             System.out.println("Productos ordenados por uds:");
-            for (Map.Entry<Producto,Integer> produc : cliente.pedido.pedido.entrySet()){
+            for (SortedMap.Entry<Producto,Integer> produc : cliente.pedido.pedido.entrySet()){
                 System.out.println(produc.getValue()+" "+produc.getKey()+" "+produc.getKey().getPrecio());
             }
         }
@@ -123,7 +124,6 @@ public class AppZonaClientes {
     public static void menuHacer(){
         imprimirCarrito(1);
         System.out.println("==========================================");
-        String opc;
         System.out.println("¿QUÉ DESEA HACER?");
         System.out.println("\t[1]. Aplicar promo.");
         System.out.println("\t[2]. Mostrar resumen ordenado por uds.");
@@ -131,7 +131,7 @@ public class AppZonaClientes {
         System.out.println("\t[X]. Terminar pedido.");
         System.out.println("==========================================");
         System.out.print("\tElige una opción: ");
-        opc=entrada.nextLine();
+        String opc=entrada.nextLine();
         System.out.println("==========================================");
         switch (opc.toUpperCase()){
             case "1":
