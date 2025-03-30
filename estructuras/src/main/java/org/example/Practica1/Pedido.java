@@ -36,8 +36,10 @@ public class Pedido {
             if (produ.toString().equals(producto)){
                 if (pedido.get(produ)>1){
                     pedido.put(produ,pedido.get(produ)-1);
+                    importe_total=importe_total-produ.getPrecio();
                 }else {
                     pedido.remove(produ);
+                    importe_total=importe_total-produ.getPrecio();
                 }
             }
         }
