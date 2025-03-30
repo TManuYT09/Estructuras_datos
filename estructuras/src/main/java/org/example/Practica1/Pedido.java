@@ -5,6 +5,11 @@ import java.util.Map;
 
 public class Pedido {
     HashMap<Producto,Integer> pedido;
+
+    public HashMap<Producto, Integer> getPedido() {
+        return pedido;
+    }
+
     double importe_total;
 
     public Pedido() {

@@ -108,12 +108,12 @@ public class AppZonaClientes {
         System.out.println("RESUMEN DE TU CARRITO DE LA COMPRA:");
         if (modo==1){
             System.out.println("Productos:");
-            for (Map.Entry<Producto,Integer> produc : cliente.pedido.pedido.entrySet()){
-                System.out.println(produc.getValue()+" "+produc.getKey()+" "+produc.getKey().getPrecio());
+            for (Producto produc : cliente.pedido.pedido.keySet()){
+                System.out.println(cliente.pedido.pedido.get(produc)+" "+produc+" "+produc.getPrecio());
             }
         }else if (modo==0){
             System.out.println("Productos ordenados por uds:");
-            for (SortedMap.Entry<Producto,Integer> produc : cliente.pedido.pedido.entrySet()){
+            for (Map.Entry<Producto,Integer> produc : cliente.pedido.pedido.entrySet()){
                 System.out.println(produc.getValue()+" "+produc.getKey()+" "+produc.getKey().getPrecio());
             }
         }
