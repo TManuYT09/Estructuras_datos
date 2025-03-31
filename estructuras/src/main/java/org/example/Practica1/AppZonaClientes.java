@@ -1,9 +1,6 @@
 package org.example.Practica1;
 
-import java.util.List;
-import java.util.Map;
-import java.util.Scanner;
-import java.util.SortedMap;
+import java.util.*;
 
 public class AppZonaClientes {
     static Scanner entrada = new Scanner(System.in);
@@ -108,22 +105,25 @@ public class AppZonaClientes {
         System.out.println("RESUMEN DE TU CARRITO DE LA COMPRA:");
         if (modo==1){
             System.out.println("Productos:");
-            for (Producto produc : cliente.pedido.pedido.keySet()){
-                System.out.println(cliente.pedido.pedido.get(produc)+" "+produc+" "+produc.getPrecio());
+            for (Map.Entry<Producto,Integer> produ : cliente.pedido.pedido.entrySet()){
+                System.out.println(produ.getValue()+" "+produ.getKey()+" "+produ.getKey().getPrecio());
             }
         }else if (modo==0){
             System.out.println("Productos ordenados por uds:");
-            for (Map.Entry<Producto,Integer> produc : cliente.pedido.pedido.entrySet()){
-                System.out.println(produc.getValue()+" "+produc.getKey()+" "+produc.getKey().getPrecio());
+
+            List<Map.Entry<Producto,Integer>> productos_ordenados = new ArrayList<>(cliente.pedido.pedido.entrySet());
+            productos_ordenados.sort(Map.Entry.comparingByValue(Comparator.reverseOrder()));
+
+            for (Map.Entry<Producto,Integer> produ : productos_ordenados){
+                System.out.println(produ.getValue()+" "+produ.getKey()+" "+produ.getKey().getPrecio());
             }
         }
-
         System.out.println("IMPORTE TOTAL: "+cliente.pedido.getImporte_total());
+        System.out.println("==========================================");
     }
 
     public static void menuHacer(){
         imprimirCarrito(1);
-        System.out.println("==========================================");
         System.out.println("¿QUÉ DESEA HACER?");
         System.out.println("\t[1]. Aplicar promo.");
         System.out.println("\t[2]. Mostrar resumen ordenado por uds.");
