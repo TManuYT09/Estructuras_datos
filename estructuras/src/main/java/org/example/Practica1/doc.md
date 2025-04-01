@@ -32,6 +32,41 @@ El programa sigue el paradigma de **Programación Orientada a Objeto (POO)** y s
 
 ### Contenido de clases
 
+#### AppZonaCliente 
+- main:
+- autenticacion:
+- iniciarCompra:
+- imprimirProducto:
+- imprimirCarrito:
+- menuHacer:
+- imprimirDespedida
+
+#### Cliente
+- Cliente:
+- crearPedido:
+- insertarProducto:
+- importePedido:
+- cambiarPromociones:
+- getUsuario:
+- getContraseña:
+- getDireccion:
+- getPromocion:
+- @Override equals:
+- @Override hashCode
+
+#### Mercadam
+- Mercadam:
+- generarClientes:
+- getClientes:
+
+#### Pedido
+- Pedido:
+- aplicarPromo3x2:
+- aplicarPromo10:
+- anyadirAlMap:
+- eliminarProducto:
+- getImporteTotal:
+
 ## Programa principal
 
 ## Pruebas
