@@ -25,9 +25,64 @@ El programa sigue el paradigma de **Programación Orientada a Objeto (POO)** y s
 
 ### Diagrama de Clases UML
 
+![diagrama.png](img%2Fdiagrama.png)
+
 ### Código PlantUML
 
 ````PlantUML
+@startuml
+
+class AppZonaClientes {
+    static Cliente
+    + autenticacion(List<Cliente> clientes)
+    + iniciarCompra()
+    + imprimirProductos()
+    + imprimirDespedida()
+}
+
+class Mercadam {
+    - List<Cliente> clientes
+    + static generarClientes()
+    + static List<Cliente> getClientes()
+}
+
+class Cliente {
+    - String usuario
+    - String contraseña
+    - String direccion
+    - Pedido pedido
+    - boolean promociones
+    + crearPedido()
+    + insertarProducto()
+    + double importePedido()
+}
+
+class Pedido {
+    - HashMap<Producto, Integer> pedido
+    - double importe_total
+    + aplicarPromo3x2()
+    + aplicarPromo10()
+}
+
+enum Producto {
+    MANZANAS(2.30), 
+    PAN(1.00), 
+    ARROZ(3.50), 
+    POLLO(4.30),
+    LECHE(1.30), 
+    ACEITE(8.30), 
+    HUEVOS(3.30), 
+    TOMATES(4.00), 
+    PASTA(0.89)
+}
+
+AppZonaClientes o-- Cliente : "se asigna"
+AppZonaClientes --> Mercadam : "se invoca"
+Mercadam *-- Cliente : "se crea"
+Cliente *-- Pedido : "realiza"
+
+
+@enduml
 ````
 
 ### Contenido de clases
