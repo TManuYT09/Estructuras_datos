@@ -8,7 +8,7 @@
     - [Código PlantUML](#código-plantuml)
     - [Contenido de clases](#contenido-de-clases)
 3. [Programa principal](#programa-principal)
-4. [Pruebas](#pruebas)
+4. [Pruebas de comprobacion de errores](#pruebas-de-comprobacion-de-errores)
 5. [Entrega](#entrega)
 
 
@@ -60,16 +60,27 @@ El programa sigue el paradigma de **Programación Orientada a Objeto (POO)** y s
 
 #### Pedido
 - Pedido: Es el constructor de Pedido, con la particularidad de que solo genera el pedido.
-- aplicarPromo3x2: 
-- aplicarPromo10:
-- anyadirAlMap:
-- eliminarProducto:
-- getImporteTotal:
+- aplicarPromo3x2: En este método se encarga de aplicar la promoción del 3x2, cuando haya mas de 3 productos quita un producto de la lista, afectando al importe total.
+- aplicarPromo10: En este método se encarga de aplicar la promoción del 10%, quitando el 10% del importe total.
+- anyadirAlMap: Este método se encarga de añadir un producto a la lista de productos, tambien añadiendo al importe total el precio del producto añadido.
+- eliminarProducto: Este método se encarga de eliminar un producto, si hay mas de uno solo le resta uno a la cantidad de ese producto y si solo hay uno lo eliminaria de la lista, afectando esto al importe total.
+- getImporteTotal: Este método se encarga de devolver el valor del importe total.
 
 ## Programa principal
 
-## Pruebas
+El programa comienza pidiendo al cliente un usuario y contraseña, cuando se haya introducido correctamente las credenciales se pasara a la parte de introducir productos al carrito de la compra hasta que el usuario quiera parar.
+Cuando se se haya parado de introducir productos, se le pedirar al usuario que es lo que quiere hacer entre 4 opcions, aplicar las promociones bigentes, mostrar el carrito por orden de productos de forma descendente, eliminar un producto de la lista y terminar con el pedido.
+
+## Pruebas de comprobacion de errores
+### Comprobar el numero de intentos.
+![prueba1.png](img%2Fprueba1.png)
+### Comprobar el producto introducido.
+![prueba2.png](img%2Fprueba2.png)
+### Comprobar la opcion elejida tras haber ya introducido un producto.
+![prueba3.png](img%2Fprueba3.png)
+### Comprobar la opcion tras elejir que quiere hacer el usuario.
+![prueba4.png](img%2Fprueba4.png)
 
 ## Entrega
 - [ ] **Código fuente**: [Enlace a GitHub](https://github.com/TManuYT09/Estructuras_datos/tree/main/estructuras/src/main/java/org/example/Practica1)
-- [ ] **Vídeo demostrativo**: [Enlace al Vídeo]()
+- [ ] **Vídeo demostrativo**: [Enlace al Vídeo](https://youtu.be/hNQ8wWsovWU)
