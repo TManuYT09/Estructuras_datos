@@ -6,21 +6,14 @@ public class Main {
             @Override
             public boolean puedeVotar(String texto, int numerom) {
                 System.out.print("Probando "+texto+" con "+numerom+" años... ");
-                if (numerom>18){
-                    return true;
-                }else {
-                    return false;
-                }
+                return numerom>18;
+
             }
         };
 
         VerificarVoto lambda = (texto, numerom) -> {
             System.out.print("Probando "+texto+" con "+numerom+" años...");
-            if (numerom>18){
-                return true;
-            }else {
-                return false;
-            }
+            return numerom>18;
         };
         System.out.println(pruebator.puedeVotar("Maria",14));
         System.out.println(lambda.puedeVotar("Manu",21));
