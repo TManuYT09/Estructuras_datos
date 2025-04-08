@@ -15,7 +15,7 @@ public class Main {
             System.out.print("Probando "+texto+" con "+numerom+" años...");
             return numerom>18;
         };
-        System.out.println(pruebator.puedeVotar("Maria",14));
+        System.out.println(pruebator.puedeVotar("Maria",10));
         System.out.println(lambda.puedeVotar("Manu",21));
     }
 }
